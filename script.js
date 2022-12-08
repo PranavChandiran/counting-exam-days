@@ -15,7 +15,7 @@ window.onload = function() {
     let Today = new Date();
     let boardMonth =new Date(2023, 1,1);
     
-    if (Today.getMonth()==11 && today.getDate()>25) 
+    if (Today.getMonth()==11 && Today.getDate()>25) 
     {
     cmas.setFullYear(boardMonth.getFullYear()+1); 
     }  
