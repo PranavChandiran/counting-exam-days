@@ -13,7 +13,7 @@
 window.onload = function() {
     let  showit = document.querySelector("#daysleft");
     let Today = new Date();
-    let boardMonth =new Date(2023, 1,1);
+    let boardMonth =new Date(2023, 2,23);
     
     if (Today.getMonth()==11 && Today.getDate()>25) 
     {
