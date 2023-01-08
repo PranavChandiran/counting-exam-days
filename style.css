@@ -1,13 +1,22 @@
 body{
-    background-color: #8EC5FC;
+    /* background-color: #8EC5FC; */
+    background-color: #809bce;
+}
+
+.quote , .quote-2{ 
+
+    font-family: marvel;
+ 
+     color: #edf2fb;
+    text-align: center;
 
 }
 
-
-.days , .msg{
+.days , .msg { 
 
     font-family: marvel;
-    color: navy;
+   
+     color: #edf2fb;
     text-align: center;
     margin-top: 20%;
 
