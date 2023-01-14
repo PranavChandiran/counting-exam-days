@@ -1,5 +1,3 @@
-// today=new Date();
-
 
 
 window.onload = function() {
@@ -15,7 +13,7 @@ window.onload = function() {
     let fullday = 1000*60*60*24;
     
     let final = (Math.ceil((boardMonth.getTime()-Today.getTime())/(fullday)));
-    document.getElementById("daysleft").innerHTML= final;
+    document.getElementById("daysleft").innerHTML   = final;
 
     if ( final < 25) {
 
