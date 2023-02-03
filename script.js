@@ -11,7 +11,7 @@ window.onload = function() {
     let final = Math.ceil((boardMonth.getTime() - today.getTime()) / fullday);
     document.getElementById("daysleft").innerHTML = final;
 
-    if (final < 25) {
+    if (final < 11) {
         document.body.style.backgroundColor = "#F40B00";
     }
 }
