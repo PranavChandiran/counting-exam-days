@@ -1,13 +1,12 @@
 body{
-    /* background-color: #8EC5FC; */
-    background-color: #809bce;
+  
+    background-color: #E6C2BF;    /* rose water  */
 }
 
 .quote , .quote-2{ 
 
     font-family: marvel;
- 
-     color: #edf2fb;
+    color: #282120;
     text-align: center;
 
 }
@@ -15,9 +14,8 @@ body{
 .days , .msg { 
 
     font-family: marvel;
-   
-     color: #edf2fb;
-    text-align: center;
+    color: #282120;
+    ext-align: center;
     margin-top: 20%;
 
 }
@@ -30,5 +28,4 @@ body{
 .msg{
     font-weight: bold;
     font-size: 3.5rem;
-    /* margin-top: 30px; */
 }
