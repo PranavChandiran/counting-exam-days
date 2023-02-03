@@ -29,3 +29,13 @@ body{
     font-weight: bold;
     font-size: 3.5rem;
 }
+@media only screen and (max-device-width: 480px) {
+body{
+  text-align:center; }
+  .days{
+    text-align:center;
+    margin-top:30%;
+  }
+  
+    }
+  
