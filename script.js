@@ -1,17 +1,14 @@
-window.onload = function() {
-    let showing = document.querySelector("#daysleft");
-    let today = new Date();
-    let boardMonth = new Date(2023, 1, 23);
-  
-    if (today.getMonth() === 11 && today.getDate() > 25) {
-        today.setFullYear(boardMonth.getFullYear() + 1);
-    }
+document.addEventListener('DOMContentLoaded', function () {
+  // Target date: 12.11.23
+  const targetDate = new Date('2023-11-12').getTime();
 
-    let fullday = 1000 * 60 * 60 * 24;
-    let final = Math.ceil((boardMonth.getTime() - today.getTime()) / fullday);
-    document.getElementById("daysleft").innerHTML = final;
+  // Update the countdown every second
+  setInterval(function () {
+    const currentDate = new Date().getTime();
+    const timeDifference = currentDate - targetDate;
 
-    if (final < 11) {
-        document.body.style.backgroundColor = "#F40B00";
-    }
-}
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+    document.getElementById('countdown').innerHTML = `Days since 12.11.23: ${days}`;
+  }, 1000);
+});
