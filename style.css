@@ -1,41 +1,21 @@
-body{
-  
-    background-color: #E6C2BF;    /* rose water  */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.quote , .quote-2{ 
-
-    font-family: marvel;
-    color: #282120;
-    text-align: center;
-
+.counter-container {
+  text-align: center;
 }
 
-.days , .msg { 
+h1 {
+  color: #333;
+}
 
-    font-family: marvel;
-    color: #282120;
-    text-align: center;
-    margin-top: 20%;
-
+#countdown {
+  font-size: 24px;
+  color: #555;
 }
-.days{
-    position: relative;
-    font-size: 12rem;
-    font-weight: bolder;
-    
-}
-.msg{
-    font-weight: bold;
-    font-size: 3.5rem;
-}
-@media only screen and (max-device-width: 480px) {
-body{
-  text-align:center; }
-  .days{
-    text-align:center;
-    margin-top:30%;
-  }
-  
-    }
-  
