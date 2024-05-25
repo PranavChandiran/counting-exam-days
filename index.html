@@ -3,15 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Date Counters</title>
+  <title>Countdown to January 1, 2025</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    #countdown {
+      font-size: 24px;
+      color: #007bff;
+    }
+  </style>
 </head>
 <body>
-  <div class="counter-container">
-    <h1>Date Counters</h1>
-    <p id="hostelCountdown"></p>
-    <p id="tenthCountdown"></p>
-  </div>
-  <script src="script.js"></script>
+  <h1>Countdown to January 1, 2025</h1>
+  <div id="countdown">Loading...</div>
+
+  <script>
+    function updateCountdown() {
+      var today = new Date();
+      var endDate = new Date('January 1, 2025');
+      var difference = endDate - today;
+
+      var daysRemaining = Math.floor(difference / (1000 * 60 * 60 * 24));
+      var weeksRemaining = Math.floor(daysRemaining / 7);
+      var monthsRemaining = Math.floor(daysRemaining / 30.44); // Average days in a month
+
+      var daysText = daysRemaining === 1 ? "day" : "days";
+      var weeksText = weeksRemaining === 1 ? "week" : "weeks";
+      var monthsText = monthsRemaining === 1 ? "month" : "months";
+
+      document.getElementById('countdown').innerHTML = daysRemaining + " " + daysText + ", " + weeksRemaining + " " + weeksText + ", " + monthsRemaining + " " + monthsText + " remaining";
+    }
+
+    // Call updateCountdown every second
+    setInterval(updateCountdown, 1000);
+
+    // Initial call to update the countdown
+    updateCountdown();
+  </script>
 </body>
 </html>
