@@ -1,49 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Countdown to January 1, 2025</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-    h1 {
-      color: #333;
-    }
-    #countdown {
-      font-size: 24px;
-      color: #007bff;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Countdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .exam {
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #jee-shift1 {
+            background-color: #ff9999;
+        }
+        #cbse-12th-board {
+            background-color: #99ccff;
+        }
+        #jee-main-shift2 {
+            background-color: #99ff99;
+        }
+        #neet {
+            background-color: #ffcc99;
+        }
+        #jee-advanced {
+            background-color: #ccccff;
+        }
+        h2 {
+            margin: 0;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 5px 0 0;
+        }
+    </style>
 </head>
 <body>
-  <h1>Countdown to January 1, 2025</h1>
-  <div id="countdown">Loading...</div>
+    <div class="container">
+        <h1>Exam Countdown</h1>
+        <div class="exam" id="jee-shift1">
+            <h2>JEE 2025 Shift 1</h2>
+            <p id="jee-shift1-countdown"></p>
+        </div>
+        <div class="exam" id="cbse-12th-board">
+            <h2>CBSE 12th Board Exam</h2>
+            <p id="cbse-12th-board-countdown"></p>
+        </div>
+        <div class="exam" id="jee-main-shift2">
+            <h2>JEE Main 2025 Shift 2</h2>
+            <p id="jee-main-shift2-countdown"></p>
+        </div>
+        <div class="exam" id="neet">
+            <h2>NEET 2025</h2>
+            <p id="neet-countdown"></p>
+        </div>
+        <div class="exam" id="jee-advanced">
+            <h2>JEE Advanced 2025</h2>
+            <p id="jee-advanced-countdown"></p>
+        </div>
+    </div>
+    <script>
+        function countdown(dateString, elementId) {
+            const targetDate = new Date(dateString).getTime();
+            const countdownElement = document.getElementById(elementId);
 
-  <script>
-    function updateCountdown() {
-      var today = new Date();
-      var endDate = new Date('January 1, 2025');
-      var difference = endDate - today;
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
 
-      var daysRemaining = Math.floor(difference / (1000 * 60 * 60 * 24));
-      var weeksRemaining = Math.floor(daysRemaining / 7);
-      var monthsRemaining = Math.floor(daysRemaining / 30.44); // Average days in a month
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
-      var daysText = daysRemaining === 1 ? "day" : "days";
-      var weeksText = weeksRemaining === 1 ? "week" : "weeks";
-      var monthsText = monthsRemaining === 1 ? "month" : "months";
+                if (distance < 0) {
+                    countdownElement.innerHTML = "Exam has passed";
+                } else {
+                    countdownElement.innerHTML = `${days} days remaining`;
+                }
+            }
 
-      document.getElementById('countdown').innerHTML = daysRemaining + " " + daysText + ", " + weeksRemaining + " " + weeksText + ", " + monthsRemaining + " " + monthsText + " remaining";
-    }
+            updateCountdown();
+            setInterval(updateCountdown, 86400000); // Update daily
+        }
 
-    // Call updateCountdown every second
-    setInterval(updateCountdown, 1000);
-
-    // Initial call to update the countdown
-    updateCountdown();
-  </script>
+        countdown("2025-01-01", "jee-shift1"); // JEE 2025 Shift 1
+        countdown("2025-02-20", "cbse-12th-board"); // CBSE 12th Board Exam
+        countdown("2025-04-20", "jee-main-shift2"); // JEE Main 2025 Shift 2
+        countdown("2025-05-05", "neet"); // NEET 2025
+        countdown("2025-05-26", "jee-advanced"); // JEE Advanced 2025
+    </script>
 </body>
 </html>
